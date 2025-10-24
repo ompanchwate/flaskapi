@@ -49,6 +49,10 @@ llm = ChatGroq(model_name="llama-3.1-8b-instant", temperature=0.7, groq_api_key=
 app = Flask(__name__)
 chat_history = []
 
+@app.route("home", methods=["GET"])
+def home():
+    print("Hello there!")
+
 @app.route("/ask", methods=["POST"])
 def ask():
     data = request.get_json()
